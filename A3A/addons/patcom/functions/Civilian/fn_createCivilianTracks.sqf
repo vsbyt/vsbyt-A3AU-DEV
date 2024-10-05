@@ -27,21 +27,6 @@ if !(isNil "A3A_Civilian_Amb_Tracks") exitWith {};
 
 
 A3A_Civilian_Amb_Tracks = createHashMapFromArray [
-    ["Ambience",
-        [
-            ["A3A_Audio_Civ_Song1", 180],
-            ["A3A_Audio_Civ_Song2", 188],
-            ["A3A_Audio_Civ_Song3", 246],
-            ["A3A_Audio_Civ_Song4", 335],
-            ["A3A_Audio_Civ_Song5", 199],
-            ["A3A_Audio_Civ_Radio1", 177],
-            ["A3A_Audio_Civ_Radio2", 235],
-            ["A3A_Audio_Civ_Radio3", 246],
-            ["A3A_Audio_Civ_Radio4", 292],
-            ["A3A_Audio_Civ_Radio5", 189],
-            ["A3A_Audio_Civ_Radio6", 203]
-        ]
-    ],
     ["Fear", 
         [
             ["A3A_Audio_Civ_Fear1", 3],
@@ -51,7 +36,7 @@ A3A_Civilian_Amb_Tracks = createHashMapFromArray [
             ["A3A_Audio_Civ_Fear5", 6],
             ["A3A_Audio_Civ_Fear6", 7]
         ]
-    ]
+    ],
     ["Animals",
         [
             ["A3A_Audio_Civ_Dog1", 7],
@@ -75,5 +60,5 @@ A3A_Civilian_Amb_Tracks = createHashMapFromArray [
             ["A3A_Audio_Civ_Dog19", 7],
             ["A3A_Audio_Civ_Dog20", 7]
         ]
-    ],
+    ]
 ];
