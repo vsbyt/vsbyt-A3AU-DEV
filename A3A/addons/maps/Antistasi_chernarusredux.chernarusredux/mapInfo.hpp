@@ -53,16 +53,16 @@ class chernarusredux {
 };
 	disabledTowns[] = {};
 	antennas[] = {
-		{3696.868,5959.513,0},{11253.283,4311.297,0},{4969.190,9710.436,0},{8933.344,8005.681,0},{11500.237,11333.108,0}
+		{3696.868,5959.513,0},{11253.283,4311.297,0},{4969.190,9710.436,0},{8933.344,8005.681,0},{11500.237,11333.108,0},{12936.51,12761.071,0}
 	};
 	antennasBlacklistIndex[] = {};
 	banks[] = {}; //no suitable building available
 	garrison[] = {
-		{},{"outpost_21","control_30","resource_5"},{},{"control_30"}
+		{},{"outpost_3","resource_7","factory_8","seaport_2","airport_2"},{},{"control_11","control_12","control_13","control_14","control_44","control_47"}
 	};
 	fuelStationTypes[] = {"Land_A_FuelStation_Feed","Land_Ind_FuelStation_Feed_EP1","Land_FuelStation_Feed_PMC","Land_Fuelstation","Land_Fuelstation_army","Land_Benzina_schnell"};
 	milAdministrations[] = {
-		{9601.634,8816.207,-0.2},{10600.217,2333.024,0},{6217.433,7696.302,-0.2}
+		{9601.634,8816.207,-0.2},{10600.217,2333.024,0},{6217.433,7696.302,-0.2},{8766.149,13536.364,0}
 	};
 	climate = "temperate";
 	buildObjects[] = {
