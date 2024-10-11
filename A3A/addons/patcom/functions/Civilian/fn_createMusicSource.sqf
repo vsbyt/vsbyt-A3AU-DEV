@@ -36,18 +36,32 @@ private _radioItem = getPosATL _building;
 _radioItem set [2, ((_radioItem select 2) + 1)];
 private _musicSource = createVehicle ["Land_FMradio_F", _radioItem];
 
+private _tableItem = getPosATL _building; 
+_tableItem set [0, ((_tableItem select 0) + ([-1.0, 1.0] call BIS_fnc_randomNum))];
+_tableItem set [1, ((_tableItem select 1) + ([-1.0, 1.0] call BIS_fnc_randomNum))];
+_tableItem set [2, ((_tableItem select 2) + 0.5)];
+
+private _civItems = selectRandom [
+	"Item_Money", 
+	"Item_Money_bunch", 
+	"Item_Money_roll", 
+	"Item_Money_stack"
+];
+
+private _randomCivItem = createVehicle [_civItems, _tableItem];
+
 [_radioItem, _musicSource] spawn {
     params ["_radioItem", "_musicSource", "_locationType"];
     private _tracksPlayed = 1;
-    // name of the sound file in CfgSounds.hpp and the duration
+    // name of the sound file in CfgSounds.hpp and the duration (in sec)
     private _tracks = 
     [
-        ["A3A_Audio_Civ_Song1", 180],
-        ["A3A_Audio_Civ_Song2", 188],
-        ["A3A_Audio_Civ_Song3", 246],
-        ["A3A_Audio_Civ_Song4", 335],
-        ["A3A_Audio_Civ_Song5", 199],
-        ["A3A_Audio_Civ_Radio1", 177],
+        ["A3A_Audio_Civ_Song1", 127],
+        ["A3A_Audio_Civ_Song2", 192],
+        ["A3A_Audio_Civ_Song3", 180],
+        ["A3A_Audio_Civ_Song4", 196],
+        ["A3A_Audio_Civ_Song5", 357],
+        ["A3A_Audio_Civ_Radio1", 240],
         ["A3A_Audio_Civ_Radio2", 235],
         ["A3A_Audio_Civ_Radio3", 246],
         ["A3A_Audio_Civ_Radio4", 292],
@@ -69,7 +83,7 @@ private _musicSource = createVehicle ["Land_FMradio_F", _radioItem];
             deleteVehicle _radioItem;
         },
         {},
-        [_musicSource], 5, nil, true, false
+        [_musicSource], 2, nil, true, false
     ] call BIS_fnc_holdActionAdd; // hold interaction to destroy radio.
 
     while { (alive _musicSource) } do {
