@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13691.206,135.50528,2968.0803};
-		dir[]={-0.34387112,-0.62032294,-0.7050758};
-		up[]={-0.27193207,0.78432828,-0.55757588};
-		aside[]={-0.89888769,-1.1792872e-07,0.43838868};
+		pos[]={11973.811,213.19899,12897.055};
+		dir[]={0.3380931,-0.25673458,-0.90541965};
+		up[]={0.089810729,0.96648061,-0.24051549};
+		aside[]={-0.93681914,3.3760443e-08,-0.34981808};
 	};
 };
 binarizationWanted=0;
@@ -2613,7 +2613,7 @@ class Mission
 				class Item17
 				{
 					dataType="Marker";
-					position[]={12062.37,158.92999,12716.939};
+					position[]={12041.422,158.83,12660.006};
 					name="airp_mortar_4";
 					markerType="ELLIPSE";
 					type="ellipse";
@@ -2734,7 +2734,7 @@ class Mission
 				class Item26
 				{
 					dataType="Marker";
-					position[]={11905.575,159.24353,12749.718};
+					position[]={11963.587,159.01657,12830.892};
 					name="airp_2_mortar_1";
 					markerType="ELLIPSE";
 					type="ellipse";
@@ -2837,7 +2837,7 @@ class Mission
 				};
 			};
 			id=145;
-			atlOffset=-2.8069458;
+			atlOffset=-2.8078003;
 		};
 		class Item44
 		{
@@ -6774,7 +6774,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4411.6191,342.93539,10279.333};
+				position[]={4402.3232,342.93539,10294.577};
 				angles[]={0,2.6161895,0};
 			};
 			side="Empty";
