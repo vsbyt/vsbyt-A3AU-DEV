@@ -48,7 +48,9 @@ private _civItems = selectRandom [
 	"Item_Money_stack"
 ];
 
-private _randomCivItem = createVehicle [_civItems, _tableItem];
+if (5 >= random 10) then {
+    private _randomCivItem = createVehicle [_civItems, _tableItem];
+};
 
 [_radioItem, _musicSource] spawn {
     params ["_radioItem", "_musicSource", "_locationType"];
@@ -62,7 +64,7 @@ private _randomCivItem = createVehicle [_civItems, _tableItem];
         ["A3A_Audio_Civ_Song4", 196],
         ["A3A_Audio_Civ_Song5", 357],
         ["A3A_Audio_Civ_Radio1", 240],
-        ["A3A_Audio_Civ_Radio2", 235],
+        ["A3A_Audio_Civ_Radio2", 411],
         ["A3A_Audio_Civ_Radio3", 246],
         ["A3A_Audio_Civ_Radio4", 292],
         ["A3A_Audio_Civ_Radio5", 189],
