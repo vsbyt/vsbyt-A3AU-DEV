@@ -32,14 +32,13 @@ if(_mode == "ADD") then {
 				[[_location],"A3A_fnc_RIV_ATT_Cell"] remoteExec ["A3A_fnc_scheduler",2];
             } else {
                 if !(areInvadersDefeated) then {
-                    /* private _roll = round random 100;
-                    if (_roll >= 0.1) then { ///65 */
+                    private _roll = round random 100;
+                    if (_roll >= 55) then { ///65
                         [[_location],"A3A_fnc_RIV_ATT_Transfer"] remoteExec ["A3A_fnc_scheduler",2];	
-                    /* } else {
+                    } else {
                         [[_location],"A3A_fnc_RIV_ATT_Hideout"] remoteExec ["A3A_fnc_scheduler",2];
-                    }; */
+                    };
 			    };
-            
 			["REMOVE"] call SCRT_fnc_ui_assignRivalsAttackLocationEventHandler;
 			closeDialog 0;
 			closeDialog 0;

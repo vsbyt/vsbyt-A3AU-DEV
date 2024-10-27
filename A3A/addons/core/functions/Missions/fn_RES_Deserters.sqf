@@ -146,11 +146,6 @@ for "_i" from 0 to _countX do {
 	_unit setUnitPos "UP";
 	_unit setBehaviour "CARELESS";
 	_unit allowFleeing 0;
-	/* if (_sideX == Occupants) then {
-		[_unit] call A3A_fnc_reDressOcc;
-	} else {
-		[_unit] call A3A_fnc_reDressInv;
-	}; */ //doesn't work sadly
 	_Deserters pushBack _unit;
 	[_unit,"deserter"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_unit];
 };
@@ -159,11 +154,7 @@ waitUntil {
     sleep 1;
     (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [getPos _Patrolveh, 400, 400] isNotEqualTo [] || {dateToNumber date > _dateLimitNum}
 };
-//diag_log _Deserters;
-/* private _nearbyPlayer = ((allPlayers - entities "HeadlessClient_F") select {side _x in [civilian, teamPlayer]}) inAreaArray [_spawnPos, 400, 400];
-private _randomPlayer = selectRandom _nearbyPlayer;
-diag_log _nearbyPlayer;
-[_Deserters] joinSilent (group _randomPlayer); */
+
 {
 _x setCaptive false;
 _x enableAI "MOVE";
@@ -172,15 +163,9 @@ _x enableAI "TARGET";
 _x setUnitPos "UP";
 _x setBehaviour "AWARE";
 } forEach _Deserters;
-diag_log count _soldersPatrol;
-diag_log count _soldersPatrol;
-diag_log count _soldersPatrol;
-diag_log count _soldersPatrol;
-diag_log count _soldersPatrol;
-diag_log count _soldersPatrol;
 sleep 30;
 {_x allowDamage true;} forEach _Deserters;
-//if (dateToNumber date > _dateLimitNum) then {
+
 if (count _soldersPatrol <= (count (_soldersPatrol))/2) then { ///doesn't work , maybe just send it anyway?
 	private _reveal = [_spawnPos , _sideX] call A3A_fnc_calculateSupportCallReveal;
     [_spawnPos, 4, ["QRF"], _sideX, _reveal] remoteExec ["A3A_fnc_createSupport", 2];

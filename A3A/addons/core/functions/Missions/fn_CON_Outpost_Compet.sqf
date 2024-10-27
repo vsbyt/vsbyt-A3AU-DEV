@@ -42,8 +42,7 @@ private _taskId = "CON" + str A3A_taskCount;
 private _delay = 30 + (round random 20);
 private _targPos = markerPos _markerX;
 private _airbase = [_oppositeside, markerPos _markerX] call A3A_fnc_availableBasesAir;
-/* private _landbase = [_oppositeside, markerPos _markerX] call A3A_fnc_availableBasesLand;
-private _allbases = selectRandom(_airbase + _landbase); */
+
 private _vehCount = if (_difficultX) then {
 	4;
 } else {
@@ -52,40 +51,13 @@ private _vehCount = if (_difficultX) then {
 if (_markerX in (airportsX + milbases)) then {
 	_vehCount = 6;
 };
-//params ["_side", "_airbase", "_target", "_resPool", "_vehCount", "_delay", "_modifiers", "_attackType", "_reveal"];
-/* private _data = [_oppositeside, _airbase, _targPos, "attack", _vehCount, _delay, ["tierboost"]] call A3A_fnc_createAttackForceMixed;
-_data params ["_resources", "_vehicles", "_crewGroups", "_cargoGroups"]; */
+
 [_markerX, _airbase, _vehCount] spawn A3A_fnc_wavedAttack;
 // Prepare despawn conditions
 private _endTime = time + 2700;
-//private _victory = false;
-/* private _soldiers = [];
-{ _soldiers append units _x } forEach _cargoGroups; */
-waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {sidesX getVariable [_markerX,sideUnknown] == teamPlayer} /* || {sidesX getVariable [_markerX,sideUnknown] == _oppositeside} */};
-/* while {true} do
-{
-    private _markerSide = sidesX getVariable _markerX;
-    if(_markerSide == _oppositeside) exitWith {
-        //diag_log ("Attack to %1 captured the marker, starting despawn routines", _markerX);
-        _victory = true;
-    };
-    private _curSoldiers = { !fleeing _x and _x call A3A_fnc_canFight } count _soldiers;
-    if (_curSoldiers < count _soldiers * 0.25) exitWith {
-        //diag_log ("Small attack to %1 has been defeated, starting despawn routines", _markerX);
-    };
-    if(_endTime < time) exitWith {
-       // diag_log ("Small attack to %1 timed out, starting despawn routines", _markerX);
-    };
-    // Attempt to flip marker
-    [_markerX, _markerSide] remoteExec ["A3A_fnc_zoneCheck", 2];
-    sleep 30;
-}; */
-/* { [_x] spawn A3A_fnc_VEHDespawner } forEach _vehicles;
-{ [_x] spawn A3A_fnc_enemyReturnToBase } forEach _crewGroups;
-{
-    [_x, [nil, _markerX] select _victory] spawn A3A_fnc_enemyReturnToBase;
-    sleep 10;
-} forEach _cargoGroups; */
+
+waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {sidesX getVariable [_markerX,sideUnknown] == teamPlayer}};
+
 // add a check if all players are dead, in the area of a marker
 // Or add a check if possible to determite whenver other faction managed to capture marker, or leave it as is
 if (dateToNumber date > _dateLimitNum) then { ///here we need to add check if defenders or players in the area are dead or if there are more attackers then defenders

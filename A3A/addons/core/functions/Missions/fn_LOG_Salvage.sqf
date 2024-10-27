@@ -85,8 +85,8 @@ private _typeVeh = if (_difficultX) then { selectRandom (_faction get "vehiclesG
 private _typeGroup = if _difficultX then {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)} else {selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier)};
 private _boatSpawnLocation = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
 
-if ("vanilla" in A3A_factionEquipFlags) then {
-	private _typeSDV = "";
+private _typeSDV = _faction getOrDefault ["vehiclesSDV", ""];
+if (_typeSDV != "") then {
 	private _diverType = "";
 	private _diversGroup = createGroup _sideX;
 	private _diversGroup2 = createGroup _sideX;
@@ -187,8 +187,8 @@ deleteVehicle _ship;
 
 [_vehCrewGroup] spawn A3A_fnc_groupDespawner;
 [_veh] spawn A3A_fnc_vehDespawner;
-if ("vanilla" in A3A_factionEquipFlags) then {
+if (_typeSDV != "") then {
 	[_SDVcrewGroup] spawn A3A_fnc_groupDespawner;
 	[_diversGroup] spawn A3A_fnc_groupDespawner;
-	[_veh] spawn A3A_fnc_vehDespawner;
+	[_vehSDV] spawn A3A_fnc_vehDespawner;
 };

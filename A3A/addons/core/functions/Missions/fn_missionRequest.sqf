@@ -301,7 +301,6 @@ switch (_type) do {
 					};
 				};
 			};
-			//if (_site in citiesX) then {[[_site],"A3A_fnc_RES_Refugees"] remoteExec ["A3A_fnc_scheduler",2]} else {[[_site],"A3A_fnc_RES_Prisoners"] remoteExec ["A3A_fnc_scheduler",2]};
 		};
 	};
 

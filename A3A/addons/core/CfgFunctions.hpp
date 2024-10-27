@@ -539,8 +539,7 @@ class CfgFunctions
             class garrisonDialog {};
             class postmortem {};
             class reDress {};
-            class reDressInv {};
-            class reDressOcc {};
+            class reDressFaction {};
             class reinfPlayer {};
             class spawnHCGroup {};
             class vehiclePrice {};
