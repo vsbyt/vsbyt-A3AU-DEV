@@ -70,6 +70,7 @@ private _inWarningRangeOutpost = [];
 private _inWarningRangeMilbase = [];
 private _inWarningRangeAirport = [];
 private _inDetectionRangeAirport = [];
+private _inDetectionRangeMilbase = [];
 private _vehicleIsUndercover = false;
 private _supportCallAt = -1;
 private _vehPos = [];
