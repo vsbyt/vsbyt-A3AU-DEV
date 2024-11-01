@@ -69,6 +69,7 @@ private _airportWarningHeight = 750;
 private _inWarningRangeOutpost = [];
 private _inWarningRangeMilbase = [];
 private _inWarningRangeAirport = [];
+private _inDetectionRangeOutpost = []; 
 private _inDetectionRangeAirport = [];
 private _inDetectionRangeMilbase = [];
 private _vehicleIsUndercover = false;
