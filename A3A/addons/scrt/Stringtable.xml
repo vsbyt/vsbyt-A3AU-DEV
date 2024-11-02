@@ -10318,6 +10318,23 @@
                 <Korean>집결 지점으로 이동</Korean>
                 <French>Se rendre au point de ralliement</French>
             </Key>
+            <Key ID="STR_antistasi_actions_destroy_radio">
+                <Original>Destroy Radio</Original>
+                <English>Destroy Radio</English>
+                <Russian>Уничтожить радио</Russian>
+                <German>Radio zerstören</German>
+                <Italian>Distruggi radio</Italian>
+                <Spanish>Destruir radio</Spanish>
+                <French>Détruire la radio</French>
+                <Korean>라디오 파괴</Korean>
+                <Japanese>ラジオを破壊</Japanese>
+                <Chineseimp>摧毁收音机</Chineseimp>
+                <Chinese>摧毀收音機</Chinese>
+                <Polish>Zniszcz radio</Polish>
+                <Czech>Zničit rádio</Czech>
+                <Portuguese>Destruir rádio</Portuguese>
+                <Turkish>Radyoyu Yok Et</Turkish>
+            </Key>
         </Container>
         <Container name="common_notifications">
             <Key ID="STR_A3AP_notifications_possess_cooldown">
