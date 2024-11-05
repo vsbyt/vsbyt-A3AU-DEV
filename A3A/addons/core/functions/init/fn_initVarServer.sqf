@@ -491,7 +491,7 @@ Info("Building loot lists");
 
 if (["tts_emission"] call A3U_fnc_hasAddon) then {call A3U_fnc_emission};
 
-if (["diwako_anomalies"] call A3U_fnc_hasAddon) then {call A3U_fnc_fillMapAnomalies};
+if (["diwako_anomalies_main"] call A3U_fnc_hasAddon) then {call A3U_fnc_fillMapAnomalies};
 
 // Build smoke grenade magazine->muzzle hashmap
 private _smokeMuzzleHM = createHashMap;
