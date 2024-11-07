@@ -17,7 +17,17 @@ if (isNil "_player") exitWith {
 private _originPosition = position _player;
 Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
 
-private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontline && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
+/* private _potentialOutposts = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {
+    sidesX getVariable [_x, sideUnknown] != teamPlayer && {(getMarkerPos _x) distance2D _player < distanceSPWN*5}
+}; */
+/* private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontline && {sidesX getVariable [_x,sideUnknown] != teamPlayer}) && {(getMarkerPos _x) distance2D _player < distanceSPWN*2}};
+diag_log _frontLine;
+diag_log _frontLine;
+diag_log _frontLine;
+diag_log _frontLine;
+
+diag_log _frontLine; */
+private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
 private _frontlineSitesNearPlayer = ((outposts + milbases + airportsX + resourcesX + factories + citiesX) select {(_x in _frontLine) && {((getMarkerPos _x) distance2D _player < distanceSPWN*2.5) && {sidesX getVariable [_x,sideUnknown] != teamPlayer}}}) call BIS_fnc_arrayShuffle;
 
 if (_frontlineSitesNearPlayer isEqualTo []) exitWith {

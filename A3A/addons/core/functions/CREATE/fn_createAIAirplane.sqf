@@ -465,7 +465,6 @@ for "_i" from 0 to (count _array - 1) do {
 
 ["locationSpawned", [_markerX, "Airport", true]] call EFUNC(Events,triggerEvent);
 
-
 waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 
 deleteMarker _mrk;
