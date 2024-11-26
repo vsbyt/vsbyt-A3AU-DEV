@@ -8,10 +8,6 @@ class CfgFunctions {
             class airSupportTab {};
             class arsenalLimitsDialog {};
             class buyVehicleDialog {};
-            class buyVehicleDialogCivil {};
-            class buyVehicleDialogOther {};
-            class buyVehicleDialogRebel {};
-            class buyVehicleDialogStatics {};
             class buyVehicleTabs {};
             class blackMarketDialog {};
             class blackMarketTabs {};
