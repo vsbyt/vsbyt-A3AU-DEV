@@ -634,23 +634,23 @@
                 <Russian>Вся гражданская техника</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civcars">
-                <Original>Civilian cars</Original>
+                <Original>Civilian Cars</Original>
                 <Russian>Гражданские машины</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civtrucks">
-                <Original>Civilian trucks</Original>
+                <Original>Civilian Trucks</Original>
                 <Russian>Гражданские грузовики</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civboats">
-                <Original>Civilian boats</Original>
+                <Original>Civilian Boats</Original>
                 <Russian>Гражданские лодки</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civheli">
-                <Original>Civilian heli</Original>
+                <Original>Civilian Heli</Original>
                 <Russian>Гражданские вертолёты</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_civplanes">
-                <Original>Civilian planes</Original>
+                <Original>Civilian Planes</Original>
                 <Russian>Гражданские самолёты</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reb">
@@ -665,27 +665,27 @@
                 <Russian>Вся техника повстанцев</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebbasic">
-                <Original>Rebel basics</Original>
+                <Original>Rebel Basics</Original>
                 <Russian>Базовая техника повстанцев</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebtrucks">
-                <Original>Rebel trucks</Original>
+                <Original>Rebel Trucks</Original>
                 <Russian>Грузовики повстанцев</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reblightunarmed">
-                <Original>Rebel unarmed</Original>
+                <Original>Rebel Unarmed</Original>
                 <Russian>Неворуженные машины повстанцев</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebboats">
-                <Original>Rebel boats</Original>
+                <Original>Rebel Boats</Original>
                 <Russian>Лодки повстанцев</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebmedical">
-                <Original>Rebel medical</Original>
+                <Original>Rebel Medical</Original>
                 <Russian>Медицинский транспорт повстанцев</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_reblightarmed">
-                <Original>Rebel armed</Original>
+                <Original>Rebel Armed</Original>
                 <Russian>Вооруженные машины повстанцев</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebat">
@@ -697,23 +697,23 @@
                 <Russian>ПВО техника повстанцев</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_rebplane">
-                <Original>Rebel plane</Original>
+                <Original>Rebel Plane</Original>
                 <Russian>Самолёты повстанцев</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_statics">
-                <Original>All statics</Original>
+                <Original>All Statics</Original>
                 <Russian>Все турели</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticMG">
-                <Original>MG statics</Original>
+                <Original>MG Statics</Original>
                 <Russian>Пулеметные турели</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticAT">
-                <Original>AT statics</Original>
+                <Original>AT Statics</Original>
                 <Russian>ПТ турели</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticAA">
-                <Original>AA statics</Original>
+                <Original>AA Statics</Original>
                 <Russian>ПВО турели</Russian>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_staticmortars">
