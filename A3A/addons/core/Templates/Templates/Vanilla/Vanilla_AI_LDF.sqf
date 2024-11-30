@@ -12,6 +12,7 @@ private _hasCSLA = "csla" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
 private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 //////////////////////////
 //   Side Information   //
@@ -239,6 +240,11 @@ if (_hasGM) then {
 if (_hasWS) then {
     _faces append [
         #include "..\DLC_content\faces\WS\WS_white.sqf"
+    ];
+};
+if (_hasEF) then {
+    _faces append [
+        #include "..\DLC_content\faces\EF\EF_white.sqf" ///probaly need to separate by camos
     ];
 };
 ["faces", _faces] call _fnc_saveToTemplate;
