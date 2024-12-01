@@ -150,7 +150,7 @@ if (_hasRF) then {
 };
 
 //If GM cdlc + extra AAF mod
-if (_hasGM) then {
+if (isClass (configFile >> "cfgVehicles" >> "gmx_aaf_m113a2dk_wdl") && _hasGM) then {
     #include "..\DLC_content\vehicles\GM\Vanilla_NATO&AAF.sqf"
 };
 
@@ -165,6 +165,10 @@ if (_hasSOG) then {
 if (_hasSPE) then {
     #include "..\DLC_content\gear\SPE\Vanilla_AAF.sqf"
     #include "..\DLC_content\weapons\SPE\Vanilla_AAF.sqf"
+};
+
+if (_hasEF) then {
+    #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Arid.sqf"
 };
 
 //If CUP
@@ -226,6 +230,7 @@ if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
     #include "..\vehicleAnimations\vehicleAnimations_GMX_AAF.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_EF.sqf",
     #include "..\MOD_content\CUP\Vehicles_Animations.sqf"
 ]] call _fnc_saveToTemplate;
 
@@ -235,6 +240,7 @@ if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
     #include "..\vehicleVariants\Vanilla_NATO_Arid\RF_NATO_Arid.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Arid\Vanilla_NATO_Arid.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Arid\WS_NATO_Arid.sqf",
+    #include "..\vehicleVariants\Vanilla_NATO_Arid\EF_NATO_Arid.sqf",
     #include "..\vehicleVariants\Vanilla_AAF\CSLA_AAF.sqf",
     #include "..\vehicleVariants\GM_police.sqf",
     #include "..\vehicleVariants\Vanilla_AAF\RF_AAF.sqf",

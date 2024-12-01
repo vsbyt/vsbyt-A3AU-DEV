@@ -150,6 +150,10 @@ if (_hasCSLA) then {
     #include "..\DLC_content\vehicles\CSLA\Vanilla_NATO_Tropical.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Temparate.sqf"
+};
+
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", _militiaTrucks] call _fnc_saveToTemplate;
@@ -194,7 +198,8 @@ if (_hasCSLA) then {
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_EF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
@@ -202,7 +207,8 @@ if (_hasCSLA) then {
     #include "..\vehicleVariants\Vanilla_NATO_Tropical\GM_NATO_Tropical.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Tropical\RF_NATO_Tropical.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Tropical\Vanilla_NATO_Tropical.sqf",
-    #include "..\vehicleVariants\Vanilla_NATO_Tropical\WS_NATO_Tropical.sqf"
+    #include "..\vehicleVariants\Vanilla_NATO_Tropical\WS_NATO_Tropical.sqf",
+    #include "..\vehicleVariants\Vanilla_NATO_Tropical\EF_NATO_Tropical.sqf"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////

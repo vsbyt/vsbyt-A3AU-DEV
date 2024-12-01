@@ -160,6 +160,10 @@ if (_hasSOG) then {
     #include "..\DLC_content\vehicles\SOG\Vanilla_LDF.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Arid.sqf"
+};
+
 if (_hasSPE) then {
     #include "..\DLC_content\vehicles\SPE\Vanilla_LDF.sqf"
 };
@@ -215,7 +219,8 @@ if (_hasSPE) then {
     #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
 	#include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_EF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
@@ -224,6 +229,7 @@ if (_hasSPE) then {
     #include "..\vehicleVariants\Vanilla_NATO_Arid\RF_NATO_Arid.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Arid\Vanilla_NATO_Arid.sqf",
     #include "..\vehicleVariants\Vanilla_NATO_Arid\WS_NATO_Arid.sqf",
+    #include "..\vehicleVariants\Vanilla_NATO_Arid\EF_NATO_Arid.sqf",
 	#include "..\vehicleVariants\Vanilla_LDF\CSLA_LDF.sqf",
     #include "..\vehicleVariants\GM_police.sqf",
     #include "..\vehicleVariants\Vanilla_LDF\RF_LDF.sqf",

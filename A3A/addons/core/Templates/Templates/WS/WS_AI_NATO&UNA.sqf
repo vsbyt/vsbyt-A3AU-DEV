@@ -153,6 +153,10 @@ if (_hasGM) then {
     #include "..\DLC_content\vehicles\GM\WS_NATO&UNA.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Arid.sqf"
+};
+
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeAA", _planesLargeAA] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
@@ -212,7 +216,8 @@ if (_hasGM) then {
     #include "..\vehicleVariants\WS_NATO_UNA\GM_NATO_UNA.sqf",
     #include "..\vehicleVariants\WS_NATO_UNA\WS_NATO_UNA.sqf",
     #include "..\vehicleVariants\GM_police.sqf",
-    #include "..\vehicleVariants\Vanilla_AAF\SPE_AAF.sqf"
+    #include "..\vehicleVariants\Vanilla_AAF\SPE_AAF.sqf",
+    #include "..\vehicleVariants\Vanilla_NATO_Arid\EF_NATO_Arid.sqf"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////

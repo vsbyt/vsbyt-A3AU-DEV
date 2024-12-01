@@ -143,7 +143,7 @@ if (_hasWs) then {
 };
 
 //If GM cdlc + extra AAF mod
-if (_hasGM) then {
+if (isClass (configFile >> "cfgVehicles" >> "gmx_aaf_m113a2dk_wdl") && _hasGM) then {
     #include "..\DLC_content\vehicles\GM\AAF_militia_extramod.sqf"
 };
 
@@ -157,6 +157,10 @@ if (_hasSOG) then {
 
 if (_hasSPE) then {
     #include "..\DLC_content\vehicles\SPE\Vanilla_AAF.sqf"
+};
+
+if (_hasEF) then {
+    #include "..\DLC_content\vehicles\EF\Vanilla_CSAT.sqf"
 };
 
 if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
@@ -214,6 +218,7 @@ if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
     #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf",
+    #include "..\vehicleAnimations\vehicleAnimations_EF.sqf",
     #include "..\MOD_content\CUP\Vehicles_Animations.sqf"
 ]] call _fnc_saveToTemplate;
 
