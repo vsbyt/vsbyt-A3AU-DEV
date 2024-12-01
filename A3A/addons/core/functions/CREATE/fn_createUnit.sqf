@@ -72,6 +72,13 @@ if !(_unitDefinition isEqualTo []) exitWith {
     };
 	_unit setVariable ["unitType", _type, true];
 
+	private _identity = if (isNil "_identity") then {
+		[Faction(side _unit), _type] call A3A_fnc_createRandomIdentity;
+	} else {
+		_identity;
+	};
+	[_unit, _identity] call A3A_fnc_setIdentity;
+
 	//it's very fragile and non-extensible (adding second bool or string value into template will break this)
 	{
 		switch (true) do {
@@ -91,13 +98,6 @@ if !(_unitDefinition isEqualTo []) exitWith {
 	} forEach _traits;
 	_unit
 };
-
-private _identity = if (isNil "_identity") then {
-    [Faction(side _unit), _type] call A3A_fnc_createRandomIdentity;
-} else {
-    _identity;
-};
-[_unit, _identity] call A3A_fnc_setIdentity;
 
 private _unit = _group createUnit [_type, _position, _markers, _placement, _special];
 _unit setVariable ["unitType", _type, true];

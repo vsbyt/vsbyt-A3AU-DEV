@@ -31,15 +31,16 @@ private _typePrefix = switch (true) do {
 };
 
 private _faceKey = _typePrefix + (if (_typePrefix == "") then { "faces" } else { "Faces" });
-private _faces = _faction getOrDefault [_faceKey, _faction get "faces"];
+private _faces = _faction getOrDefault [_faceKey, _faction getOrDefault ["faces", []]];
 
 private _identity = createHashMap;
 _identity set ["face", selectRandom _faces];
 
 private _voiceKey = _typePrefix + (if (_typePrefix == "") then { "voices" } else { "Voices" });
-private _voices = _faction getOrDefault [_voiceKey, _faction get "voices"];
+private _voices = _faction getOrDefault [_voiceKey, _faction getOrDefault ["voices", []]];
 _identity set ["speaker", selectRandom _voices];
 
-_identity set ["firstName", selectRandom (_faction get "firstNames")];
-_identity set ["lastName", selectRandom (_faction get "lastNames")];
+_identity set ["firstName", selectRandom (_faction getOrDefault ["firstNames", []])];
+_identity set ["lastName", selectRandom (_faction getOrDefault ["lastNames", []])];
+
 _identity;
