@@ -1071,6 +1071,10 @@ if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
     #include "..\MOD_content\CUP\Vanilla_AAF\Weapons_AAF_militia.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\gear\EF\Vanilla_NATO&AAF.sqf"
+    #include "..\DLC_content\weapons\EF\Vanilla_NATO&AAF.sqf"
+};
 //
 /////////////////////////////////
 //    Unit Type Definitions    //

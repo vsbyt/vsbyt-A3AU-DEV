@@ -362,6 +362,10 @@ if (_hasJets) then {
 	#include "..\DLC_content\gear\Jets\Vanilla_Rivals.sqf" 
 };
 
+if (_hasEF) then {
+	#include "..\DLC_content\gear\EF\Vanilla_Rivals.sqf"
+};
+
 _loadoutData set ["offuniforms", _offuniforms]; ///check offuniforms later.
 _loadoutData set ["vests", _vests];
 _loadoutData set ["heavyVests", _heavyVests];

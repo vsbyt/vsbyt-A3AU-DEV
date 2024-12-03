@@ -653,6 +653,10 @@ if (_hasGM) then {
     #include "..\DLC_content\weapons\GM\Vanilla_CSAT_Arid.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\gear\EF\Vanilla_CSAT_Arid.sqf"
+};
+
 /////////////////////////////////
 //    Unit Type Definitions    //
 /////////////////////////////////

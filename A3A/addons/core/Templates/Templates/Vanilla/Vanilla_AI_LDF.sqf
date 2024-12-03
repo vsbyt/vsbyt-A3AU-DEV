@@ -725,6 +725,10 @@ if (_hasSPE) then {
     #include "..\DLC_content\weapons\SPE\Vanilla_LDF.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\gear\EF\Vanilla_LDF.sqf"
+};
+
 /////////////////////////////////
 //    Unit Type Definitions    //
 /////////////////////////////////

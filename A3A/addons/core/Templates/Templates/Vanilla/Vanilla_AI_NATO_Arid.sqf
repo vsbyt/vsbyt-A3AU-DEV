@@ -928,6 +928,11 @@ if (_hasSOG) then {
     #include "..\DLC_content\weapons\SOG\Vanilla_NATO.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\gear\EF\Vanilla_NATO_Arid.sqf"
+    #include "..\DLC_content\weapons\EF\Vanilla_NATO_Arid.sqf"
+};
+
 //
 /////////////////////////////////
 //    Unit Type Definitions    //

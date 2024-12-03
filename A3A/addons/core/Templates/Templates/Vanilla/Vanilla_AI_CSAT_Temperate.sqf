@@ -660,6 +660,10 @@ if (_hasGM) then {
 if (_hasSOG) then {
     #include "..\DLC_content\weapons\SOG\Vanilla_CSAT.sqf"
 };
+
+if (_hasEF) then {
+    #include "..\DLC_content\gear\EF\Vanilla_CSAT_Temperate.sqf"
+};
 //
 
 /////////////////////////////////

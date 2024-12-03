@@ -1192,6 +1192,11 @@ if (_hasGM) then {
     #include "..\DLC_content\weapons\GM\Vanilla_NATO&LDF.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\gear\EF\Vanilla_NATO&UNA.sqf"
+    #include "..\DLC_content\weapons\EF\Vanilla_NATO&AAF.sqf"
+};
+
 //
 /////////////////////////////////
 //    Unit Type Definitions    //

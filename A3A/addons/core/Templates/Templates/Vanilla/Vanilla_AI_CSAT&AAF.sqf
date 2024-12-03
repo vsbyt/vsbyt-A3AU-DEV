@@ -845,6 +845,10 @@ if (_hasSPE) then {
     #include "..\DLC_content\weapons\SPE\Vanilla_AAF.sqf"
 };
 
+if (_hasEF) then {
+    #include "..\DLC_content\gear\EF\Vanilla_CSAT&AAF.sqf"
+};
+
 //If CUP
 if (isClass (configFile >> "cfgVehicles" >> "CUP_ZSU23_Base")) then {
     #include "..\MOD_content\CUP\Vanilla_AAF\Gear_AAF_militia.sqf"
