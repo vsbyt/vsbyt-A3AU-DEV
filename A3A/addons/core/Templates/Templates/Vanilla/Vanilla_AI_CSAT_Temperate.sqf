@@ -12,6 +12,7 @@ private _hasCSLA = "csla" in A3A_enabledDLC;
 private _hasRF = "rf" in A3A_enabledDLC;
 private _hasSOG = "vn" in A3A_enabledDLC;
 private _hasSPE = "spe" in A3A_enabledDLC;
+private _hasEF = "ef" in A3A_enabledDLC;
 
 //////////////////////////
 //   Side Information   //
@@ -82,7 +83,6 @@ private _uavsPortable = ["I_UAV_01_F"];
 ["vehiclesMilitiaTrucks", ["O_T_Truck_02_transport_F", "O_T_Truck_02_F"]] call _fnc_saveToTemplate;
 private _militiaLightArmed = ["B_G_Offroad_01_armed_F"];
 private _militiaCars = ["B_G_Offroad_01_F"];
-private _militiaAPCs = ["O_APC_Wheeled_02_rcws_v2_F"];
 private _militiaAPCs = ["O_T_APC_Wheeled_02_rcws_v2_ghex_F"];
 
 private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
@@ -139,6 +139,7 @@ if (_hasEF) then {
     #include "..\DLC_content\vehicles\EF\Vanilla_CSAT.sqf"
 };
 
+["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _planesTransport] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;

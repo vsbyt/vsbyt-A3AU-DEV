@@ -275,6 +275,7 @@ class Templates
         basepath = QPATHTOFOLDER(Templates\Templates\EF); //the path to the template folder
         priority = 5;
         forceDLC[] = {"ef"};
+        equipFlags[] = {"vanilla"};
     };
 
     class EF_MJTF_Arid : EF_Base

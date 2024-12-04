@@ -28,7 +28,7 @@ private _hasSPE = "spe" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
-["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
+["vehiclesSDV", ["EF_B_SDV_01_MJTF_Des"]] call _fnc_saveToTemplate;
 
 ["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
 
@@ -38,7 +38,7 @@ private _hasSPE = "spe" in A3A_enabledDLC;
 
 private _basic = ["B_T_Quadbike_01_F"];
 private _unarmedVehicles = ["B_T_MRAP_01_F"];
-private _armedVehicles = ["B_T_MRAP_01_gmg_F", "B_T_MRAP_01_hmg_F", "EF_B_MRAP_01_AT_MJTF_Des", "EF_B_MRAP_01_FSV_MJTF_Des","EF_B_MRAP_01_LAAD_MJTF_Wdl"];
+private _armedVehicles = ["B_T_MRAP_01_gmg_F", "B_T_MRAP_01_hmg_F", "EF_B_MRAP_01_AT_MJTF_Wdl", "EF_B_MRAP_01_FSV_MJTF_Wdl","EF_B_MRAP_01_LAAD_MJTF_Wdl"];
 private _Trucks = ["B_Truck_01_covered_F", "B_Truck_01_transport_F"];
 private _cargoTrucks = ["B_T_Truck_01_cargo_F", "B_T_Truck_01_flatbed_F"];
 private _ammoTrucks = ["B_T_Truck_01_ammo_F"];

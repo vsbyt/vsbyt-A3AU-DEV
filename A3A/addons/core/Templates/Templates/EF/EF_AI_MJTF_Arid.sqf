@@ -28,7 +28,7 @@ private _hasSPE = "spe" in A3A_enabledDLC;
 //       Vehicles       //
 //////////////////////////
 
-["vehiclesSDV", ["B_SDV_01_F"]] call _fnc_saveToTemplate;
+["vehiclesSDV", ["EF_B_SDV_01_MJTF_Des"]] call _fnc_saveToTemplate;
 
 ["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate;
 

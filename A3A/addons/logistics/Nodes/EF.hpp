@@ -4,7 +4,7 @@ class ef_ef_hunter_ef_mrap_01_fsv : TRIPLES(ADDON,Nodes,Base)
     {
         class Node1
         {
-            offset[] = {-0.47,-3.4,-1.77};
+             offset[] = {-0.39,-3.3,-1.74};
         };
     };
 };
@@ -15,18 +15,18 @@ class ef_ef_hunter_ef_mrap_01_at : TRIPLES(ADDON,Nodes,Base)
     {
         class Node1
         {
-            offset[] = {-0.47,-3.4,-1.77};
+             offset[] = {-0.39,-3.3,-1.74};
         };
     };
 };
 
-class ef_ef_hunter_ef_mrap_01_fsv : TRIPLES(ADDON,Nodes,Base)
+class ef_ef_hunter_ef_mrap_01_laad : TRIPLES(ADDON,Nodes,Base)
 {
     class Nodes
     {
         class Node1
         {
-            offset[] = {-0.47,-3.4,-1.77};
+            offset[] = {-0.39,-3.3,-1.74};
         };
     };
 };
