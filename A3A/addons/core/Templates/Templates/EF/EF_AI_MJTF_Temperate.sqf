@@ -170,8 +170,8 @@ if (_hasCSLA) then {
 ["vehiclesHelisTransport", _transportHelicopters] call _fnc_saveToTemplate;
 ["vehiclesPolice", _vehiclesPolice] call _fnc_saveToTemplate;
 ["vehiclesHelisLightAttack", _vehiclesHelisLightAttack] call _fnc_saveToTemplate;
-["vehiclesHelisLight", _helisLight] call _fnc_saveToTemplate;
-["vehiclesHelisAttack", _helisAttack] call _fnc_saveToTemplate;
+["vehiclesHelisLight", _vehiclesHelisLight] call _fnc_saveToTemplate;
+["vehiclesHelisAttack", _vehiclesHelisAttack] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
 ["vehicleRadar", _radar] call _fnc_saveToTemplate;
 ["vehicleSam", _SAM] call _fnc_saveToTemplate;
