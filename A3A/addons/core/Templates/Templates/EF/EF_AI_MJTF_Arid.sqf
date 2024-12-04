@@ -190,7 +190,7 @@ if (_hasCSLA) then {
 ["vehiclesAirborne", _airborneVehicles] call _fnc_saveToTemplate;
 ["vehiclesMilitiaAPCs", _militiaAPCs] call _fnc_saveToTemplate;
 
-#include "Vanilla_Vehicle_Attributes.sqf"
+#include "..\Vanilla\Vanilla_Vehicle_Attributes.sqf"
 
 ["animations", [
     #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
