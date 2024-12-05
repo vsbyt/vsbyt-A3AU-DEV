@@ -778,6 +778,7 @@ class CfgFunctions
             class countAttachedObjects {};
             class createDataObject {};
             class createNamespace {};
+            class createRandomIdentity {};
             class deleteNamespace {};
             class getAdmin {};
             class isEngineer {};

@@ -267,6 +267,7 @@ if (_hasWS) then {
 ["insignia", ["111thID", "", ""]] call _fnc_saveToTemplate;
 ["sfInsignia", ["CTRG"]] call _fnc_saveToTemplate;
 
+"NATOMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //
