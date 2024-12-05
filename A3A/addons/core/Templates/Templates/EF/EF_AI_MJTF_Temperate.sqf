@@ -52,9 +52,9 @@ private _IFVs = ["EF_B_AAV9_MJTF_Wdl", "EF_B_AAV9_MJTF_Wdl", "EF_B_AAV9_50mm_MJT
 private _airborneVehicles = ["B_T_APC_Wheeled_01_cannon_F","B_T_UGV_01_olive_F"];
 private _lightTanks = ["B_T_UGV_01_olive_F"];
 private _tanks = ["B_T_MBT_01_cannon_F", "B_T_MBT_01_TUSK_F"];
-["vehiclesAA", ["EF_B_MRAP_01_LAAD_MJTF_Wdl", "B_T_APC_Tracked_01_AA_F"]] call _fnc_saveToTemplate;
+private _aa = ["EF_B_MRAP_01_LAAD_MJTF_Wdl", "B_T_APC_Tracked_01_AA_F"];
 
-["vehiclesTransportBoats", ["B_Boat_Transport_01_F", "I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
+private _transportBoat = ["B_Boat_Transport_01_F", "I_C_Boat_Transport_02_F"];
 ["vehiclesGunBoats", ["EF_B_CombatBoat_HMG_MJTF_Wdl", "EF_B_CombatBoat_AT_MJTF_Wdl"]] call _fnc_saveToTemplate;
 //["vehiclesAmphibious", []] call _fnc_saveToTemplate; not now
 
@@ -66,10 +66,10 @@ private _planesLargeAA = [];
 ["vehiclesPlanesTransport", ["B_T_VTOL_01_infantry_F"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", ["B_T_VTOL_01_armed_F"]] call _fnc_saveToTemplate;
 
-private _helisLight = ["a3a_Heli_Light_01_ION_F"];
+private _vehiclesHelisLight = ["a3a_Heli_Light_01_ION_F"];
 private _transportHelicopters =  ["EF_B_Heli_Transport_01_MJTF_Des"];
-private _helisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F"]
-private _helisAttack = ["EF_B_AH99J_MJTF_Des", "B_Heli_Attack_01_dynamicLoadout_F"];
+private _vehiclesHelisLightAttack = ["B_Heli_Light_01_dynamicLoadout_F"];
+private _vehiclesHelisAttack = ["EF_B_AH99J_MJTF_Des", "B_Heli_Attack_01_dynamicLoadout_F"];
 
 private _artillery = ["B_T_MBT_01_mlrs_F"];
 
@@ -168,7 +168,7 @@ if (_hasCSLA) then {
 ["vehiclesTanks", _tanks] call _fnc_saveToTemplate;
 ["uavsPortable", _uavsPortable] call _fnc_saveToTemplate;
 ["vehiclesHelisTransport", _transportHelicopters] call _fnc_saveToTemplate;
-["vehiclesPolice", _vehiclesPolice] call _fnc_saveToTemplate;
+["vehiclesPolice", _policeVehs] call _fnc_saveToTemplate;
 ["vehiclesHelisLightAttack", _vehiclesHelisLightAttack] call _fnc_saveToTemplate;
 ["vehiclesHelisLight", _vehiclesHelisLight] call _fnc_saveToTemplate;
 ["vehiclesHelisAttack", _vehiclesHelisAttack] call _fnc_saveToTemplate;
