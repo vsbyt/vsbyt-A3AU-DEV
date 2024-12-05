@@ -56,7 +56,7 @@ private _tanks = ["B_T_MBT_01_cannon_F", "B_T_MBT_01_TUSK_F"];
 private _aa = ["B_T_APC_Tracked_01_AA_F"];
 
 private _transportBoat = ["B_T_Boat_Transport_01_F"];
-["vehiclesGunBoats", ["B_T_Boat_Armed_01_minigun_F","a3a_Boat_Armed_01_hmg_blufor_F"]] call _fnc_saveToTemplate;
+private _gunBoat = ["B_T_Boat_Armed_01_minigun_F","a3a_Boat_Armed_01_hmg_blufor_F"];
 
 private _planesCAS = ["B_Plane_CAS_01_dynamicLoadout_F","B_UAV_02_dynamicLoadout_F"];
 private _planesLargeCAS = [];
@@ -154,6 +154,7 @@ if (_hasEF) then {
     #include "..\DLC_content\vehicles\EF\Vanilla_NATO_Temparate.sqf"
 };
 
+["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", _militiaTrucks] call _fnc_saveToTemplate;
