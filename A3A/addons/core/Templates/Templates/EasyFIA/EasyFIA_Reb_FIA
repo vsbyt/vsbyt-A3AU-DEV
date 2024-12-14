@@ -1,0 +1,264 @@
+///////////////////////////
+//   Rebel Information   //
+///////////////////////////
+["name", "FIA"] call _fnc_saveToTemplate;
+["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
+["flagTexture", "HSO_GM_EasyFIA\misc\flag_FIA_co.paa"] call _fnc_saveToTemplate; // check flag path
+["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
+
+//////////////////////////
+//  Mission/HQ Objects  //
+//////////////////////////
+
+// All of bellow are optional overrides.
+["firstAidKits", ["gm_ge_firstaidkit_vehicle", "gm_gc_firstaidkit_vehicle", "gm_ge_army_firstaidkit_vehicle", "gm_gc_army_medkit"]] call _fnc_saveToTemplate;  // Relies on autodetection. However, item is tested for for help and reviving.
+["mediKits", ["gm_gc_army_medbox", "gm_ge_army_medkit_80"]] call _fnc_saveToTemplate;  // Relies on autodetection. However, item is tested for for help and reviving.
+["toolKits", ["gm_repairkit_01"]] call _fnc_saveToTemplate;  // Relies on autodetection.
+
+["flyGear", [
+	"gm_ge_uniform_pilot_commando_blk",
+	"gm_ge_uniform_pilot_commando_gry",
+	"gm_ge_uniform_pilot_commando_oli",
+	"gm_ge_uniform_pilot_commando_rolled_blk",
+	"gm_ge_uniform_pilot_commando_rolled_gry",
+	"gm_ge_uniform_pilot_commando_rolled_oli"
+]] call _fnc_saveToTemplate;
+
+//////////////////////////
+//       Vehicles       //
+//////////////////////////
+
+["vehiclesBasic", ["HSO_GM_FIA_K125"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["HSO_GM_FIA_Beetle", "HSO_GM_FIA_Iltis", "HSO_GM_FIA_UAZ", "HSO_GM_FIA_Typ253"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["HSO_GM_FIA_UAZ_DShK", "HSO_GM_FIA_VN_MUTT_MG"]] call _fnc_saveToTemplate;
+["vehiclesTruck", ["HSO_GM_FIA_Unimog", "HSO_GM_FIA_ural375D_transport", "HSO_GM_FIA_Typ251", "HSO_GM_FIA_Typ247"]] call _fnc_saveToTemplate;
+["vehiclesAT", ["HSO_GM_FIA_UAZ_SPG"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["CUP_I_Ural_ZU23_NAPA"]] call _fnc_saveToTemplate; // CHANGE - VN?
+["vehiclesBoat", ["vn_i_boat_01_mg_01_fank_70", "vn_i_boat_02_mg_01_fank_70"]] call _fnc_saveToTemplate;
+["vehiclesPlane", ["gm_gc_civ_l410s_passenger"]] call _fnc_saveToTemplate;
+
+["vehiclesCivCar", ["HSO_GM_Civilian_Noe_Trabbie", "HSO_GM_Civilian_Noe_w123"]] call _fnc_saveToTemplate;
+["vehiclesCivTruck", ["HSO_GM_Civilian_Noe_ural4320"]] call _fnc_saveToTemplate;
+["vehiclesCivHeli", ["gm_gc_civ_mi2p"]] call _fnc_saveToTemplate; // CHANGE - NOE
+["vehiclesCivBoat", ["vn_c_boat_01_01"]] call _fnc_saveToTemplate;
+
+["staticMGs", ["HSO_GM_FIA_DShK", "HSO_GM_FIA_M2_AA", "HSO_GM_FIA_M2"]] call _fnc_saveToTemplate;
+["staticAT", ["HSO_GM_FIA_SPG9"]] call _fnc_saveToTemplate;
+["staticAA", ["vn_o_nva_static_zgu1_01"]] call _fnc_saveToTemplate;
+
+["staticMortars", ["vn_o_vc_static_mortar_type53"]] call _fnc_saveToTemplate;
+["staticMortarMagHE", "vn_mortar_type53_mag_he_x8"] call _fnc_saveToTemplate;
+["staticMortarMagSmoke", "vn_mortar_type53_mag_wp_x8"] call _fnc_saveToTemplate;
+["staticMortarMagFlare", "vn_mortar_type53_mag_lume_x8"] call _fnc_saveToTemplate;
+
+["mineAT", "gm_mine_at_tm46"] call _fnc_saveToTemplate;         // , "gm_mine_at_dm1233"]]
+["mineAPERS", "gm_mine_ap_dm31"] call _fnc_saveToTemplate;
+
+["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
+["breachingExplosivesTank", [["gm_explosive_petn_charge", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;
+
+#include "GM_Reb_Vehicle_Attributes.sqf"
+
+///////////////////////////
+//  Rebel Starting Gear  //
+///////////////////////////
+
+private _initialRebelEquipment = [
+	"gm_p1_blk", "gm_8Rnd_9x19mm_B_DM11_p1_blk", "gm_8Rnd_9x19mm_B_DM51_p1_blk",
+	"gm_p2a1_blk", "gm_1Rnd_265mm_flare_single_red_gc", "gm_1Rnd_265mm_flare_single_wht_gc", "gm_1Rnd_265mm_flare_single_grn_DM11",
+	"vn_m712", "vn_m712_mag",
+	"vn_welrod", "vn_welrod_mag",
+	"vn_hd", "vn_hd_mag",
+
+//	"gm_mp2a1_blk", "gm_32Rnd_9x19mm_B_DM11_mp2_blk", "gm_32Rnd_9x19mm_B_DM51_mp2_blk",
+//	"vn_mp40", "vn_mp40_mag", "vn_mp40_t_mag",
+//	"vn_mat49", "vn_mat49_mag", "vn_mat49_t_mag",
+//	"vn_sten", "vn_sten_mag", "vn_sten_t_mag",
+
+//	"sgun_HunterShotgun_01_F", "sgun_HunterShotgun_01_sawedoff_F", "2Rnd_12Gauge_Pellets", "2Rnd_12Gauge_Slug",
+	"vn_izh54", "vn_izh54_shorty", "vn_izh54_p", "vn_izh54_mag",
+//	"vn_m36", "vn_m36_mag", "vn_m36_t_mag", "vn_b_m36",
+//	"vn_k98k", "vn_k98k_mag", "vn_k98k_t_mag", "vn_b_k98k"
+
+//  "gm_pm_blk", "gm_8Rnd_9x18mm_B_pst_pm_blk",
+//  "vn_m1891", "vn_m38", "vn_m38_mag", "vn_m38_t_mag", "vn_b_m38",
+//  "vn_vz61", "vn_vz61_p", "vn_vz61_mag", "vn_vz61_t_mag",
+
+	["gm_m72a3_oli", 10], "gm_1Rnd_66mm_heat_m72a3",
+
+	["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
+	"gm_handgrenade_frag_rgd5", "gm_handgrenade_frag_m26", "gm_smokeshell_wht_gc",
+
+	"HSO_GM_FIA_Backpack", "gm_ge_backpack_satchel_80_blk",
+	"HSO_GM_FIA_Webbing_Crew", "HSO_GM_FIA_Webbing_Rifle", "HSO_GM_FIA_Webbing_Machinegunner",
+	"gm_df7x40_blk", "gm_photocamera_01_blk"
+];
+
+if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr", "tf_anprc154"]};
+if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["tf_anprc155", "tf_anprc155_coyote"]};
+if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr", "TFAR_anprc154"]};
+if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment append ["TFAR_anprc155", "TFAR_anprc155_coyote"]};
+_initialRebelEquipment append ["Chemlight_blue", "Chemlight_green", "Chemlight_red", "Chemlight_yellow"];
+["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
+
+_rebUniforms = [
+	"HSO_GM_FIA_Uniform_01", 
+	"HSO_GM_FIA_Uniform_01G", 
+	"HSO_GM_FIA_Uniform_01J",
+	"HSO_GM_FIA_Uniform_02", 
+	"HSO_GM_FIA_Uniform_02G", 
+	"HSO_GM_FIA_Uniform_02J",
+	"HSO_GM_FIA_Uniform_03", 
+	"HSO_GM_FIA_Uniform_03G", 
+	"HSO_GM_FIA_Uniform_03J",
+	"HSO_GM_FIA_Uniform_04", 
+	"HSO_GM_FIA_Uniform_04G", 
+	"HSO_GM_FIA_Uniform_04J",
+	"HSO_GM_FIA_Uniform_05", 
+	"HSO_GM_FIA_Uniform_05G", 
+	"HSO_GM_FIA_Uniform_05J"
+];
+["uniforms", _rebUniforms ] call _fnc_saveToTemplate;
+
+["headgear", [
+	"gm_ge_headgear_beret_bdx",
+	"gm_ge_headgear_hat_beanie_blk",
+	"HSO_GM_FIA_Beanie_Alpine",
+	"HSO_GM_FIA_Beanie_Bluegrey",
+	"HSO_GM_FIA_Beanie_Denison",
+	"HSO_GM_FIA_Beanie_FieldGrey",
+	"HSO_GM_FIA_Beanie_Jigsaw",
+	"HSO_GM_FIA_Beanie_Khaki",
+	"HSO_GM_FIA_Beanie_Oak",
+	"HSO_GM_FIA_Beanie_Olive",
+	"HSO_GM_FIA_Boonie_Alpine",
+	"HSO_GM_FIA_Boonie_BlueGrey",
+	"HSO_GM_FIA_Boonie_Denison",
+	"HSO_GM_FIA_Boonie_FieldGrey",
+	"HSO_GM_FIA_Boonie_Jigsaw",
+	"HSO_GM_FIA_Boonie_Khaki",
+	"HSO_GM_FIA_Boonie_Oak",
+	"HSO_GM_FIA_Boonie_Olive",
+	"HSO_GM_FIA_fieldcap_Alpine",
+	"HSO_GM_FIA_fieldcap_Bluegrey",
+	"HSO_GM_FIA_fieldcap_Denison",
+	"HSO_GM_FIA_fieldcap_Fieldgrey",
+	"HSO_GM_FIA_fieldcap_Jigsaw",
+	"HSO_GM_FIA_fieldcap_Khaki",
+	"HSO_GM_FIA_fieldcap_Oak",
+	"HSO_GM_FIA_fieldcap_Olive",
+	"HSO_GM_FIA_sidecap_Bluegrey",
+	"HSO_GM_FIA_sidecap_Fieldgrey",
+	"HSO_GM_FIA_sidecap_Khaki",
+	"HSO_GM_FIA_sidecap_Olive"
+]] call _fnc_saveToTemplate;
+
+/////////////////////
+///  Identities   ///
+/////////////////////
+
+["faces", [
+	"gm_face_whiteHead_01", "gm_face_whiteHead_02",
+	"WhiteHead_01", "WhiteHead_02", "WhiteHead_03", "WhiteHead_04", "WhiteHead_05", "WhiteHead_06", "WhiteHead_07", "WhiteHead_08", "WhiteHead_09", "WhiteHead_10", "WhiteHead_11", "WhiteHead_12", "WhiteHead_13", "WhiteHead_14", "WhiteHead_15", "WhiteHead_16", "WhiteHead_17", "WhiteHead_18", "WhiteHead_19", "WhiteHead_20", "WhiteHead_21", "WhiteHead_23", "WhiteHead_24", "WhiteHead_25", "WhiteHead_26", "WhiteHead_27", "WhiteHead_28", "WhiteHead_29", "WhiteHead_30", "WhiteHead_31", "WhiteHead_32",
+	"GreekHead_A3_05", "GreekHead_A3_06", "GreekHead_A3_11", "GreekHead_A3_12", "GreekHead_A3_13",
+	"LivonianHead_1", "LivonianHead_2", "LivonianHead_3", "LivonianHead_4", "LivonianHead_5", "LivonianHead_6", "LivonianHead_7", "LivonianHead_8", "LivonianHead_9", "LivonianHead_10",
+	"RussianHead_1", "RussianHead_2", "RussianHead_4"
+]] call _fnc_saveToTemplate;
+["voices", [
+	"gm_voice_male_deu_01", // mod uses Polish voices but German makes more sense for Weferlingen
+	"gm_voice_male_deu_02",
+	"gm_voice_male_deu_03",
+	"gm_voice_male_deu_04",
+	"gm_voice_male_deu_05",
+	"gm_voice_male_deu_06",
+	"gm_voice_male_deu_07",
+	"gm_voice_male_deu_08",
+	"gm_voice_male_deu_09"
+]] call _fnc_saveToTemplate;
+
+//////////////////////////
+//       Loadouts       //
+//////////////////////////
+
+private _loadoutData = call _fnc_createLoadoutData;
+_loadoutData set ["maps", ["ItemMap"]];
+_loadoutData set ["watches", ["gm_watch_kosei_80"]];
+_loadoutData set ["compasses", ["gm_gc_compass_f73"]];
+_loadoutData set ["binoculars", ["gm_df7x40_blk"]];
+
+_loadoutData set ["uniforms", _rebUniforms];
+
+_loadoutData set ["glasses", [
+	"G_Aviator",
+	"G_Spectacles",
+	"G_Spectacles_Tinted",
+	"G_Squares",
+	"G_Squares_Tinted",
+	"gm_ge_facewear_glacierglasses" // add VN glasses
+]];
+_loadoutData set ["goggles", ["gm_gc_army_facewear_dustglasses"]];
+_loadoutData set ["facemask", [
+	"G_Bandanna_aviator",
+	"G_Bandanna_blk",
+	"G_Bandanna_oli",
+	"gm_ge_facewear_stormhood_blk",
+	"gm_xx_facewear_scarf_01_blk",
+	"gm_xx_facewear_scarf_01_grn",
+	"gm_xx_facewear_scarf_01_gry",
+	"gm_xx_facewear_scarf_01_oli"
+]];
+
+_loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
+_loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];
+_loadoutData set ["items_medical_medic", ["MEDIC"] call A3A_fnc_itemset_medicalSupplies];
+_loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials];
+
+////////////////////////
+//  Rebel Unit Types  //
+///////////////////////.
+
+private _squadLeaderTemplate = {
+	["uniforms"] call _fnc_setUniform;
+	[selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1]] call _fnc_setFacewear;
+
+	["items_medical_standard"] call _fnc_addItemSet;
+	["items_miscEssentials"] call _fnc_addItemSet;
+
+	["maps"] call _fnc_addMap;
+	["watches"] call _fnc_addWatch;
+	["compasses"] call _fnc_addCompass;
+	["binoculars"] call _fnc_addBinoculars;
+};
+
+private _riflemanTemplate = {
+	["uniforms"] call _fnc_setUniform;
+	[selectRandomWeighted [[], 1.25, "glasses", 1, "goggles", 0.75, "facemask", 1]] call _fnc_setFacewear;
+	
+	["items_medical_standard"] call _fnc_addItemSet;
+	["items_miscEssentials"] call _fnc_addItemSet;
+
+	["maps"] call _fnc_addMap;
+	["watches"] call _fnc_addWatch;
+	["compasses"] call _fnc_addCompass;
+};
+
+private _prefix = "militia";
+private _unitTypes = [
+	["Petros", _squadLeaderTemplate],
+	["SquadLeader", _squadLeaderTemplate],
+	["Rifleman", _riflemanTemplate],
+	["staticCrew", _riflemanTemplate],
+	["Medic", _riflemanTemplate, [["medic", true]]],
+	["Engineer", _riflemanTemplate, [["engineer", true]]],
+	["ExplosivesExpert", _riflemanTemplate, [["explosiveSpecialist", true]]],
+	["Grenadier", _riflemanTemplate],
+	["LAT", _riflemanTemplate],
+	["AT", _riflemanTemplate],
+	["AA", _riflemanTemplate],
+	["MachineGunner", _riflemanTemplate],
+	["Marksman", _riflemanTemplate],
+	["Sniper", _riflemanTemplate],
+	["Unarmed", _riflemanTemplate]
+];
+
+[_prefix, _unitTypes, _loadoutData] call _fnc_generateAndSaveUnitsToTemplate;
