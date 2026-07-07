@@ -24,35 +24,68 @@
 //////////////////////////
 
 ["vehiclesBasic", ["gm_ge_army_k125"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["gm_ge_army_iltis_cargo"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["gm_gc_army_uaz469_dshkm"]] call _fnc_saveToTemplate;
-["vehiclesTruck", ["gm_ge_army_kat1_451_cargo"]] call _fnc_saveToTemplate;
-["vehiclesAT", ["gm_gc_army_uaz469_spg9"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["gm_gc_army_p601_noinsignia", "gm_gc_army_uaz469_cargo_noinsignia"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["gm_gc_army_uaz469_dshkm_noinsignia"]] call _fnc_saveToTemplate;
+["vehiclesTruck", ["gm_gc_army_ural375d_cargo_noinsignia", "gm_gc_army_ural4320_cargo_noinsignia"]] call _fnc_saveToTemplate;
+["vehiclesAT", ["gm_gc_army_uaz469_spg9_noinsignia"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["CUP_I_Ural_ZU23_NAPA"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["gm_gc_army_ural375d_medic_noinsignia"]] call _fnc_saveToTemplate;
 
 ["vehiclesBoat", ["I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["gm_gc_civ_l410s_passenger"]] call _fnc_saveToTemplate;
+["vehiclesPlane", ["gm_gc_airforce_l410t_noinsignia"]] call _fnc_saveToTemplate;
 
 ["vehiclesCivCar", ["gm_gc_civ_p601", "gm_ge_civ_w123"]] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", ["gm_gc_civ_ural375d_cargo"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", ["gm_gc_civ_mi2p"]] call _fnc_saveToTemplate;
+["vehiclesCivPlane", ["gm_gc_civ_l410s_passenger", "gm_gc_civ_l410s_salon"]] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", ["C_Rubberboat"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["gm_gc_army_dshkm_aatripod"]] call _fnc_saveToTemplate;
 ["staticAT", ["gm_gc_army_spg9_tripod"]] call _fnc_saveToTemplate;
 ["staticAA", ["CUP_I_ZU23_NAPA"]] call _fnc_saveToTemplate;
 
-["staticMortars", ["CUP_O_2b14_82mm_RU"]] call _fnc_saveToTemplate;
-["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
-["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
-["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
+["staticMortars", ["gm_gc_army_2b11"]] call _fnc_saveToTemplate;
+["staticMortarMagHE", "gm_20Rnd_120mm_he_of843"] call _fnc_saveToTemplate;
+["staticMortarMagSmoke", "gm_10Rnd_120mm_smoke_d843"] call _fnc_saveToTemplate;
+["staticMortarMagFlare", "gm_10Rnd_120mm_illum_s843"] call _fnc_saveToTemplate;
 
 ["mineAT", "gm_mine_at_dm21"] call _fnc_saveToTemplate;         // , "gm_mine_at_dm1233"]]
-["mineAPERS", "gm_mine_ap_dm31"] call _fnc_saveToTemplate;
+["mineAPERS", "gm_mine_ap_dm31", "gm_minestatic_ap_pfm1"] call _fnc_saveToTemplate;
 
-["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
-["breachingExplosivesTank", [["gm_explosive_petn_charge", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;
+["breachingExplosivesAPC", [["gm_explosive_petn_charge", 1], ["gm_explosive_plnp_charge", 1]]] call _fnc_saveToTemplate;
+["breachingExplosivesTank", [["gm_explosive_petn_charge", 2], ["gm_explosive_plnp_charge", 2]]] call _fnc_saveToTemplate;
+
+//////////////////////////////////////
+//       Antistasi Plus Stuff       //
+//////////////////////////////////////
+
+//animation sources - camo nets, slat cages, decals etc, digit is probability of appearance
+["animations", [
+	["gm_gc_army_uaz469_cargo_noinsignia", ["ConvoyLights_01_unhide", 0.3, "FrontLight_01_Cover_unhide", 0.3, "windshield", 0.3, "windows_unhide", 0.3, "cover_hoops_unhide", 0.3, "spare_wheel_unhide", 0.3, "antenna_01_unhide", 0.3, "antenna_02_unhide", 0.3, "FogLights_01_unhide", 0.3, "mirrors_01_unhide", 0.3, "doors_unhide", 0.3]],
+	["gm_gc_army_uaz469_dshkm_noinsignia", ["ConvoyLights_01_unhide", 0.3, "FrontLight_01_Cover_unhide", 0.3, "windows_unhide", 0.3, "mirrors_01_unhide", 0.3, "windshield", 0.3, "spare_wheel_unhide", 0.3, "antenna_01_unhide", 0.3, "antenna_02_unhide", 0.3, "FogLights_01_unhide",0.3, "doors_unhide",0.3]],
+	["gm_gc_army_uaz469_spg9_noinsignia", ["ConvoyLights_01_unhide", 0.3, "FrontLight_01_Cover_unhide", 0.3, "windshield", 0.3, "windows_unhide", 0.3, "mirrors_01_unhide", 0.3, "spare_wheel_unhide", 0.3, "antenna_01_unhide", 0.3, "antenna_02_unhide", 0.3, "FogLights_01_unhide", 0.3, "doors_unhide", 0.3]],
+	["gm_gc_army_ural375d_cargo_noinsignia", ["ConvoyLights_01_unhide", 0.3, "FrontLight_01_Cover_unhide", 0.3, "cover_hide_unhide", 0.3, "winch_unhide", 0.3, "roofRack_unhide", 0.3, "camonet_01_unhide", 0.3, "camonet_02_unhide", 0.3, "AmmoBox_01_unhide", 0.3, "AmmoBox_02_unhide", 0.3, "AmmoBox_03_unhide", 0.3, "AmmoBox_04_unhide", 0.3, "Barrel_01_unhide", 0.3, "coldWeatherKit_unhide", 0.3, "fuelcan_1_1_unhide", 0.3, "fuelcan_1_2_unhide", 0.3, "lightGuard_unhide", 0.3, "toolbox_unhide", 0.3, "tools_unhide", 0.3]],
+	["gm_gc_army_ural375d_medic_noinsignia", ["ConvoyLights_01_unhide", 0.3, "FrontLight_01_Cover_unhide", 0.3, "toolbox_unhide", 0.3, "tools_unhide", 0.3, "roofRack_unhide", 0.3, "camonet_01_unhide", 0.3, "camonet_02_unhide", 0.3, "AmmoBox_01_unhide", 0.3, "AmmoBox_02_unhide", 0.3, "AmmoBox_03_unhide", 0.3, "AmmoBox_04_unhide", 0.3, "Barrel_01_unhide", 0.3, "fuelcan_1_1_unhide", 0.3, "fuelcan_1_2_unhide", 0.3, "TowBar_01_unhide", 0.3]],
+	["gm_gc_army_ural4320_cargo_noinsignia", ["ConvoyLights_01_unhide", 0.3, "FrontLight_01_Cover_unhide", 0.3, "cover_hide_unhide", 0.3, "winch_unhide", 0.3, "roofRack_unhide", 0.3, "camonet_01_unhide", 0.3, "camonet_02_unhide", 0.3, "AmmoBox_01_unhide", 0.3, "AmmoBox_02_unhide", 0.3, "AmmoBox_03_unhide", 0.3, "AmmoBox_04_unhide", 0.3, "Barrel_01_unhide", 0.3, "coldWeatherKit_unhide", 0.3, "fuelcan_1_1_unhide", 0.3, "fuelcan_1_2_unhide", 0.3, "lightGuard_unhide", 0.3, "toolbox_unhide", 0.3, "tools_unhide", 0.3]]
+]] call _fnc_saveToTemplate;
+
+//vehicle skins
+["variants", [
+	// vehicles
+	["gm_ge_army_k125", ["gm_carc_tan", 1, "gm_drapolive", 1, "gm_khs5146", 1, "gm_merdc_grn", 1, "gm_merdc_wht", 1, "gm_oilochre", 1, "gm_pkhv4", 1, "gm_xb518", 1, "gm_zis508", 1]],
+	["gm_gc_army_p601_noinsignia", ["gm_carc_tan", 1, "gm_drapolive", 1, "gm_khs5146", 1, "gm_merdc_grn", 1, "gm_merdc_wht", 1, "gm_oilochre", 1, "gm_pkhv4", 1, "gm_xb518", 1, "gm_zis508", 1]],
+	["gm_gc_army_uaz469_cargo_noinsignia", ["gm_carc_tan", 1, "gm_drapolive", 1, "gm_khs5146", 1, "gm_merdc_grn", 1, "gm_merdc_wht", 1, "gm_oilochre", 1, "gm_pkhv4", 1, "gm_xb518", 1, "gm_zis508", 1]],
+	["gm_gc_army_uaz469_dshkm_noinsignia", ["gm_carc_tan", 1, "gm_drapolive", 1, "gm_khs5146", 1, "gm_merdc_grn", 1, "gm_merdc_wht", 1, "gm_oilochre", 1, "gm_pkhv4", 1, "gm_xb518", 1, "gm_zis508", 1]],
+	["gm_gc_army_uaz469_spg9_noinsignia", ["gm_carc_tan", 1, "gm_drapolive", 1, "gm_khs5146", 1, "gm_merdc_grn", 1, "gm_merdc_wht", 1, "gm_oilochre", 1, "gm_pkhv4", 1, "gm_xb518", 1, "gm_zis508", 1]],
+	["gm_gc_army_ural375d_cargo_noinsignia", ["gm_carc_tan", 1, "gm_drapolive", 1, "gm_khs5146", 1, "gm_merdc_grn", 1, "gm_merdc_wht", 1, "gm_oilochre", 1, "gm_pkhv4", 1, "gm_xb518", 1, "gm_zis508", 1]],
+	["gm_gc_army_ural375d_medic_noinsignia", ["gm_carc_tan", 1, "gm_drapolive", 1, "gm_khs5146", 1, "gm_merdc_grn", 1, "gm_merdc_wht", 1, "gm_oilochre", 1, "gm_pkhv4", 1, "gm_xb518", 1, "gm_zis508", 1]],
+	["gm_gc_army_ural4320_cargo_noinsignia", ["gm_carc_tan", 1, "gm_drapolive", 1, "gm_khs5146", 1, "gm_merdc_grn", 1, "gm_merdc_wht", 1, "gm_oilochre", 1, "gm_pkhv4", 1, "gm_xb518", 1, "gm_zis508", 1]],
+	// aircraft
+	["gm_gc_civ_l410s_passenger", ["gm_blu", 1, "gm_grn", 1, "gm_wht", 1]],
+	["gm_gc_civ_l410s_salon", ["gm_blu", 1, "gm_grn", 1, "gm_wht", 1]],
+	["gm_gc_civ_mi2p", ["gm_blu", 1, "gm_grn", 1, "gm_red", 1, "gm_tan", 1, "gm_yel", 1]],
+]] call _fnc_saveToTemplate;
 
 #include "GM_Reb_Vehicle_Attributes.sqf"
 
@@ -89,7 +122,7 @@ _rebUniforms = [
 	"gm_xx_army_uniform_fighter_03_brn",
 	"gm_xx_army_uniform_fighter_04_grn",
 	"gm_xx_army_uniform_fighter_04_wdl"
-	];
+];
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;
 
