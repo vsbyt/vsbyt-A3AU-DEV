@@ -1,3 +1,5 @@
+#include "..\..\script_component.hpp"
+
 params ["_moneyX", ["_hasSound", false]];
 
 [CBA_EVENT_CLIENT_RESOURCE_CHANGE, [_moneyX]] call FUNCMAIN(triggerLocalEvent);
