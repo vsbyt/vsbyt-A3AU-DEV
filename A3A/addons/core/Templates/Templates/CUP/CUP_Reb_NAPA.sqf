@@ -20,11 +20,10 @@
 ["vehiclesCivPlane", ["CUP_C_AN2_CIV", "CUP_C_DC3_ChernAvia_CIV"]] call _fnc_saveToTemplate;
 ["vehiclesMedical", ["CUP_I_LR_Ambulance_RACS"]] call _fnc_saveToTemplate;
 
-
 ["vehiclesCivCar", ["CUP_O_Hilux_unarmed_CR_CIV"]] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", ["CUP_C_Ural_Civ_03"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", ["CUP_C_412", "CUP_C_Mi17_Civilian_RU", "CUP_C_Mi17_VIV_RU", "CUP_C_SA330_Puma_HC1_ChernAvia"]] call _fnc_saveToTemplate;
-["vehiclesCivBoat", ["CUP_C_Fishing_Boat_Chernarus"]] call _fnc_saveToTemplate;
+["vehiclesCivBoat", ["CUP_C_Zodiac_CIV"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["CUP_I_DSHKM_NAPA", "CUP_B_DSHkM_MiniTriPod_NAPA"]] call _fnc_saveToTemplate;
 ["staticAT", ["CUP_I_SPG9_NAPA"]] call _fnc_saveToTemplate;
@@ -43,6 +42,11 @@
 
 #include "CUP_Reb_Vehicle_Attributes.sqf"
 
+["variants", [
+	["CUP_I_TT650_NAPA", ["Red", 1, "WhiteRed", 1]],
+	["CUP_C_Ural_Civ_03", ["CIV1", 1, "CIV2", 1, "CIV3", 1]]
+]] call _fnc_saveToTemplate;
+
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////
@@ -56,7 +60,7 @@ private _initialRebelEquipment = [
     ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
     "CUP_HandGrenade_RGD5", "SmokeShell",
     "CUP_V_I_Carrier_Belt", "CUP_V_I_Guerilla_Jacket", "CUP_V_I_RACS_Carrier_Rig_2", "CUP_V_I_RACS_Carrier_Rig_wdl_2", "CUP_V_B_GER_Carrier_Rig_2_Brown",
-    "CUP_B_SLA_Medicbag",
+    "CUP_B_CivPack_WDL", "CUP_B_SLA_Medicbag",
     "Binocular"
 ];
 
