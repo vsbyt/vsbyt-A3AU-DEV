@@ -204,8 +204,10 @@ _civHats = [
 	"CUP_H_C_Beret_01",
 	"CUP_H_C_Beret_02",
 	"CUP_H_C_Beret_03",
-	"CUP_H_PMC_Cap_Tan",
-	"CUP_H_PMC_Cap_Grey"
+	"CUP_H_C_Ushanka_03",
+	"CUP_H_C_Ushanka_02",
+	"CUP_H_C_Ushanka_01",
+	"CUP_H_C_Ushanka_04"
 ];
 
 ["headgear", _civHats] call _fnc_saveToTemplate;            //Headgear given to Normal Civs, Workers, Undercover Rebels.
@@ -229,9 +231,9 @@ _loadoutData set ["vipUniforms", _vipUniforms];
 _loadoutData set ["sidearms", ["CUP_hgun_SWM327MP", "CUP_hgun_CZ75", "CUP_hgun_Compact", "CUP_hgun_TT"]];
 
 private _manTemplate = {
-    ["helmets"] call _fnc_setHelmet;
+    [selectRandomWeighted [[], 2, "helmets", 1]] call _fnc_setHelmet;
     ["uniforms"] call _fnc_setUniform;
-    ["facewear"] call _fnc_setFacewear;
+    [selectRandomWeighted [[], 2, "facewear", 1]] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
@@ -242,7 +244,7 @@ private _manTemplate = {
 private _workerTemplate = {
     ["workerHelmets"] call _fnc_setHelmet;
     ["workerUniforms"] call _fnc_setUniform;
-    ["facewear"] call _fnc_setFacewear;
+    [selectRandomWeighted [[], 2, "facewear", 1]] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
@@ -254,7 +256,7 @@ private _pressTemplate = {
     ["pressHelmets"] call _fnc_setHelmet;
     ["pressVests"] call _fnc_setVest;
     ["pressUniforms"] call _fnc_setUniform;
-    ["facewear"] call _fnc_setFacewear;
+    [selectRandomWeighted [[], 2, "facewear", 1]] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
@@ -263,8 +265,9 @@ private _pressTemplate = {
     ["compasses"] call _fnc_addCompass;
 };
 private _vipTemplate = {
+	[selectRandomWeighted [[], 2, "helmets", 1]] call _fnc_setHelmet;
     ["vipUniforms"] call _fnc_setUniform;
-    ["facewear"] call _fnc_setFacewear;
+    [selectRandomWeighted [[], 2, "facewear", 1]] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
