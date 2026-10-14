@@ -5,6 +5,7 @@
 ["vehiclesCivCar", [
     "CUP_O_Hilux_unarmed_CR_CIV", 0.5
     , "CUP_C_Ikarus_Chernarus", 0.2
+    , "CUP_C_SUV_CIV", 0.1
     , "CUP_C_Datsun", 0.5
 	, "CUP_C_Datsun_Covered", 0.2
 	, "CUP_C_Volha_CR_CIV", 0.5
@@ -15,12 +16,15 @@
 	, "CUP_C_Skoda_CR_CIV", 0.5
 	, "CUP_C_S1203_CIV_CR", 0.5
 	, "CUP_C_TT650_CIV", 0.2
+	, "CUP_C_UAZ_Unarmed_TK_CIV", 0.1
+	, "CUP_C_UAZ_Open_TK_CIV", 0.1
     ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivHeli", [
     "CUP_C_Mi17_Civilian_RU", 0.5
     , "CUP_C_Mi17_VIV_RU", 0.5
 	, "CUP_C_412", 0.5
+	, "CUP_C_412_Luxury", 0.1
 	, "CUP_C_SA330_Puma_HC1_ChernAvia", 0.5
 ]] call _fnc_saveToTemplate;
 
@@ -56,7 +60,6 @@
 ["vehiclesCivPlanes", [
     "CUP_C_AN2_CIV", 0.5
     , "CUP_C_DC3_ChernAvia_CIV", 0.5
-	, "CUP_C_CESSNA_CIV", 0.3
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
@@ -67,7 +70,9 @@
 	["C_Truck_02_transport_F", ["Blue", 1, "Orange", 1]],
 	["C_Truck_02_covered_F", ["BlueBlue", 0.5, "BlueOlive", 1, "OrangeBlue", 0.5, "OrangeOlive", 1]],
 	["C_Truck_02_box_F", ["BlueGreen", 1, "BlueOrange", 0.5, "OrangeGreen", 1, "OrangeOrange", 0.5]],
-	["C_Truck_02_fuel_F", ["Blue", 1, "Orange", 1]]
+	["C_Truck_02_fuel_F", ["Blue", 1, "Orange", 1]],
+	["CUP_C_412", ["BlackWhite", 1, "Blue", 1, "Bluelines", 1, "Flamingo", 1, "Frostfire", 1, "Wave", 1, "Luxury", 1, "Parrot", 1, "Red", 1, "Redlines", 1, "Shark", 1, "Sun", 1, "Twilight", 1, "Vrana", 1, "Wasp", 1]],
+	["CUP_C_412_Luxury", ["BlackWhite", 1, "Blue", 1, "Bluelines", 1, "Flamingo", 1, "Frostfire", 1, "Wave", 1, "Luxury", 1, "Parrot", 1, "Red", 1, "Redlines", 1, "Shark", 1, "Sun", 1, "Twilight", 1, "Vrana", 1, "Wasp", 1]]
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
@@ -173,7 +178,24 @@ private _vipUniforms = [
 
 ["uniforms", _civUniforms + _pressUniforms + _workerUniforms + _vipUniforms] call _fnc_saveToTemplate;          //Uniforms given to the Arsenal, Allowed for Undercover and given to Rebel Ai that go Undercover
 
-_civHats = [];
+_civHats = [
+	"H_Cap_grn_BI",
+	"H_Cap_blk",
+	"H_Cap_blu",
+	"H_Cap_red",
+	"CUP_H_PMC_Cap_Tan",
+	"CUP_H_PMC_Cap_Grey",
+	"CUP_H_C_Beanie_01",
+	"CUP_H_C_Beanie_02",
+	"CUP_H_C_Beanie_03",
+	"CUP_H_C_Beanie_04",
+	"CUP_H_C_Beret_04",
+	"CUP_H_C_Beret_01",
+	"CUP_H_C_Beret_02",
+	"CUP_H_C_Beret_03",
+	"CUP_H_PMC_Cap_Tan",
+	"CUP_H_PMC_Cap_Grey"
+];
 
 ["headgear", _civHats] call _fnc_saveToTemplate;            //Headgear given to Normal Civs, Workers, Undercover Rebels.
 
@@ -183,8 +205,10 @@ _loadoutData set ["uniforms", _civUniformsAI];
 _loadoutData set ["pressUniforms", _pressUniforms];
 _loadoutData set ["workerUniforms", _workerUniforms];
 _loadoutData set ["pressVests", ["V_Press_F"]];
+_loadoutData set ["helmets", _civHats];
 _loadoutData set ["pressHelmets", ["H_Cap_press"]];
 _loadoutData set ["workerHelmets", ["H_Cap_blk", "H_Cap_blu", "H_Cap_red", "H_Cap_marshal", "CUP_H_PMC_Cap_Tan", "CUP_H_PMC_Cap_Grey"]];
+_loadoutData set ["facewear", ["G_Aviator", "G_Shades_Black", "G_Spectacles", "G_Spectacles_Tinted", "G_Squares", "G_Squares_Tinted"]];
 
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
@@ -194,7 +218,9 @@ _loadoutData set ["vipUniforms", _vipUniforms];
 _loadoutData set ["sidearms", ["CUP_hgun_SWM327MP", "CUP_hgun_CZ75", "CUP_hgun_Compact", "CUP_hgun_TT"]];
 
 private _manTemplate = {
+    ["helmets"] call _fnc_setHelmet;
     ["uniforms"] call _fnc_setUniform;
+    ["facewear"] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
@@ -205,6 +231,7 @@ private _manTemplate = {
 private _workerTemplate = {
     ["workerHelmets"] call _fnc_setHelmet;
     ["workerUniforms"] call _fnc_setUniform;
+    ["facewear"] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
@@ -216,6 +243,7 @@ private _pressTemplate = {
     ["pressHelmets"] call _fnc_setHelmet;
     ["pressVests"] call _fnc_setVest;
     ["pressUniforms"] call _fnc_setUniform;
+    ["facewear"] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
@@ -225,6 +253,7 @@ private _pressTemplate = {
 };
 private _vipTemplate = {
     ["vipUniforms"] call _fnc_setUniform;
+    ["facewear"] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
