@@ -18,7 +18,7 @@
 
 ["vehiclesPlane", ["CUP_O_AN2_TK"]] call _fnc_saveToTemplate;       // replace from civ varient s
 ["vehiclesCivPlane", ["CUP_C_AN2_CIV", "CUP_C_DC3_ChernAvia_CIV"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["CUP_I_LR_Ambulance_RACS"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["CUP_B_S1203_Ambulance_CR"]] call _fnc_saveToTemplate;
 
 ["vehiclesCivCar", ["CUP_O_Hilux_unarmed_CR_CIV"]] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", ["CUP_C_Ural_Civ_03"]] call _fnc_saveToTemplate;
@@ -60,7 +60,7 @@ private _initialRebelEquipment = [
     ["CUP_launch_RPG18", 5],
     ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
     "CUP_HandGrenade_RGD5", "SmokeShell",
-    "CUP_V_I_Carrier_Belt", "CUP_V_I_Guerilla_Jacket", "CUP_V_I_RACS_Carrier_Rig_2", "CUP_V_I_RACS_Carrier_Rig_wdl_2", "CUP_V_B_GER_Carrier_Rig_2_Brown",
+    "CUP_V_I_Carrier_Belt", "CUP_V_I_Guerilla_Jacket", "CUP_V_I_RACS_Carrier_Rig_2", "CUP_V_I_RACS_Carrier_Rig_wdl_2", "CUP_V_B_GER_Carrier_Rig_2_Brown", "CUP_V_B_GER_Carrier_Rig_2",
     "CUP_B_CivPack_WDL", "CUP_B_SLA_Medicbag",
     "Binocular"
 ];
@@ -101,13 +101,11 @@ private _rebUniforms = [
 ];          //Uniforms given to Player Rebels
 
 private _rebUniformsAI = [
-    "CUP_U_I_GUE_Anorak_01",
     "CUP_U_I_GUE_Anorak_03",
     "CUP_U_I_GUE_Anorak_02",
     "CUP_U_I_GUE_WorkU_01",
     "CUP_U_I_GUE_WorkU_02",
     "CUP_U_I_GUE_Flecktarn2",
-    "CUP_U_I_GUE_Flecktarn3",
     "CUP_U_I_GUE_Flecktarn",
     "CUP_U_I_GUE_Flecktarn4",
     "CUP_U_I_GUE_Woodland1"
@@ -162,7 +160,6 @@ _loadoutData set ["binoculars", ["Binocular"]];
 
 _loadoutData set ["uniforms", _rebUniformsAI];
 _loadoutData set ["facewear", [
-	"None",
 	"G_Aviator",
 	"G_Bandanna_aviator",
 	"G_Bandanna_blk",
@@ -185,7 +182,7 @@ _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials
 
 private _squadLeaderTemplate = {
     ["uniforms"] call _fnc_setUniform;
-    ["facewear"] call _fnc_setFacewear;
+    [selectRandomWeighted [[], 1, "facewear", 2]] call _fnc_setFacewear;
 
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
@@ -195,7 +192,7 @@ private _squadLeaderTemplate = {
 
 private _riflemanTemplate = {
     ["uniforms"] call _fnc_setUniform;
-    ["facewear"] call _fnc_setFacewear;
+    [selectRandomWeighted [[], 1, "facewear", 5]] call _fnc_setFacewear;
 
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
