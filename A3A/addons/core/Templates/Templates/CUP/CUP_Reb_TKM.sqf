@@ -7,6 +7,7 @@
 ["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
 ["flagTexture", "cup\baseconfigs\cup_baseconfigs\data\flags\flag_tkm_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "Faction_CUP_TKM"] call _fnc_saveToTemplate;
+["flyGear", ["CUP_U_I_Pilot_01"]] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["CUP_I_TT650_NAPA"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["CUP_I_Hilux_unarmed_TK", "CUP_I_Hilux_armored_unarmed_TK"]] call _fnc_saveToTemplate;
@@ -23,7 +24,7 @@
 ["vehiclesCivCar", ["CUP_O_Hilux_unarmed_TK_CIV"]] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", ["CUP_C_Ural_Civ_03"]] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", ["CUP_C_Mi17_Civilian_RU", "CUP_C_Mi17_VIV_RU"]] call _fnc_saveToTemplate;
-["vehiclesCivBoat", ["C_Rubberboat"]] call _fnc_saveToTemplate;
+["vehiclesCivBoat", ["CUP_C_Zodiac_CIV"]] call _fnc_saveToTemplate;
 
 ["staticMGs", ["CUP_I_DSHKM_TK_GUE", "CUP_I_DSHkM_MiniTriPod_TK_GUE"]] call _fnc_saveToTemplate;
 ["staticAT", ["CUP_I_SPG9_TK_GUE"]] call _fnc_saveToTemplate;
