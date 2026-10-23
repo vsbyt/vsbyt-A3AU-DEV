@@ -7,6 +7,7 @@
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
 ["flagTexture", "cup\baseconfigs\cup_baseconfigs\data\flags\flag_napa_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "Faction_CUP_NAPA"] call _fnc_saveToTemplate;
+["flyGear", ["CUP_U_I_Pilot_01"]] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["CUP_I_TT650_NAPA"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["CUP_I_Hilux_unarmed_NAPA", "CUP_I_Hilux_armored_unarmed_NAPA"]] call _fnc_saveToTemplate;
@@ -93,11 +94,7 @@ private _rebUniforms = [
     "CUP_U_I_GUE_Woodland1",
 	"CUP_U_B_BDUv2_DPM_OD",
 	"CUP_U_B_BDUv2_roll_DPM_OD",
-    "CUP_U_B_BDUv2_roll2_DPM_OD",
-	"CUP_U_B_BDUv2_dirty_DPM_OD",
-	"CUP_U_B_BDUv2_roll_dirty_DPM_OD",
-    "CUP_U_B_BDUv2_roll2_dirty_DPM_OD",
-	"CUP_U_I_Pilot_01"
+    "CUP_U_B_BDUv2_roll2_DPM_OD"
 ];          //Uniforms given to Player Rebels
 
 private _rebUniformsAI = [
@@ -111,7 +108,7 @@ private _rebUniformsAI = [
     "CUP_U_I_GUE_Woodland1"
 ];          //Uniforms given to AI Rebels
 
-["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
+["uniforms", _rebUniforms + _rebUniformsAI] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
 
 ["headgear", [
 	"CUP_H_FR_BandanaGreen",
@@ -167,7 +164,7 @@ _loadoutData set ["facewear", [
 	"G_Bandanna_khk",
 	"G_Bandanna_shades",
 	"G_Shades_Black",
-	"G_Squares",
+	"G_Squares", 
 	"CUP_RUS_Balaclava_blk"
 ]];
 
